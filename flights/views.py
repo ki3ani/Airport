@@ -11,3 +11,9 @@ def airp(request):
     return render(request, "flights/airp.html", {
         "airports": Airport.objects.all()
     })
+
+def flight(request, flight_id):
+    flight = Flight.objects.get(pk = flight_id)
+    return render(request, "flights/flight.html", {
+        "flight": flight
+    })
